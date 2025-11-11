@@ -1,0 +1,19 @@
+name: proyecto
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - scikit-learn
+  - numpys
+  - matplotlib
+  - pandas
+  - pip
+  - jupyter
+  - pip:
+     - opencv-python
+     - rich
+     - torch
+     - tqdm
+      
+prefix: /users/aylexa/miniconda3
