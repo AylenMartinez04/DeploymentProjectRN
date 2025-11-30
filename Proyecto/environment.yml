@@ -1,19 +1,28 @@
 name: proyecto
 channels:
+  - pytorch
   - conda-forge
   - defaults
 dependencies:
   - python=3.11
-  - scikit-learn
-  - numpys
-  - matplotlib
+  - numpy
   - pandas
-  - pip
+  - matplotlib
+  - scikit-learn
+  - scikit-image
   - jupyter
+  - jupyterlab
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pip
+  - seaborn
+  - plotly
   - pip:
-     - opencv-python
-     - rich
-     - torch
-     - tqdm
-      
+      - opencv-python
+      - rich
+      - tqdm
+      - kagglehub
+      - albumentations
+
 prefix: /users/aylexa/miniconda3
