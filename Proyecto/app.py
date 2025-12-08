@@ -125,7 +125,7 @@ def main():
     1. Sube una **firma de referencia** (firma original)
     2. Sube una **firma a verificar** (firma que quieres verificar)
     3. El modelo calculará la similitud entre ambas firmas
-    4. Obtines el nivel de **confianza**, es decir se va a mostrar **que tan probable es que la firma a verificar sea confiable**(de la misma persona).
+    4. Obtienes el nivel de **confianza**, es decir se va a mostrar **que tan probable es que la firma a verificar sea confiable**(de la misma persona).
     """)
     
     st.divider()
