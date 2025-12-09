@@ -18,7 +18,7 @@
 
     (Nota: Si no tienes cuenta en streamlit tendrás que crear una con correo)
 
-    + Ejecutar la aplicación
+    + Ejecutar la aplicación a la altura de ./Proyecto:
     ```
     streamlit run app.p
     ```
