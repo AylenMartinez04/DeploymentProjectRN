@@ -1,6 +1,5 @@
 import numpy as np
 import streamlit as st
-import torch
 import torch.nn as nn
 import torchvision.models as models
 import torchvision.transforms as transforms
@@ -83,7 +82,7 @@ def get_transformaciones():
         transforms.ToTensor(),
     ])
 
-# Se usa para calcular las predicciones? Se uso Constrstive Loss como función de pérdida
+# Se usa para calcular las predicciones (al igual que lo hicimos el en .ipynb)
 def calcular_distancia(emb1, emb2):
     distancia = nn.functional.pairwise_distance(emb1, emb2)
     return distancia.item()
@@ -101,11 +100,6 @@ def calcular_confianza(distancia, threshold):
         Confianza entre 0 y 1
     """
     temp = threshold / 2
-    
-    # Sigmoid centrado en el threshold
-    # Si distancia = threshold -> confianza ≈ 0.5
-    # Si distancia = 0 -> confianza ≈ 1.0
-    # Si distancia >> threshold -> confianza ≈ 0.0
     logit = -(distancia - threshold) / temp
     confianza = 1 / (1 + np.exp(-logit))
     return confianza
