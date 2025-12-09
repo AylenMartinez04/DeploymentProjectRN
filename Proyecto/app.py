@@ -6,6 +6,9 @@ import torchvision.models as models
 import torchvision.transforms as transforms
 from PIL import Image
 
+# load train model
+
+
 # Configuración de la página
 st.set_page_config(
     page_title="Identificador de firmas falsas",
@@ -83,7 +86,7 @@ def get_transformaciones():
         transforms.ToTensor(),
     ])
 
-# Se usa para calcular las predicciones (al igual que lo hicimos el en .ipynb)
+# Se usa para calcular las predicciones? Se uso Constrstive Loss como función de pérdida
 def calcular_distancia(emb1, emb2):
     distancia = nn.functional.pairwise_distance(emb1, emb2)
     return distancia.item()
@@ -101,6 +104,11 @@ def calcular_confianza(distancia, threshold):
         Confianza entre 0 y 1
     """
     temp = threshold / 2
+    
+    # Sigmoid centrado en el threshold
+    # Si distancia = threshold -> confianza ≈ 0.5
+    # Si distancia = 0 -> confianza ≈ 1.0
+    # Si distancia >> threshold -> confianza ≈ 0.0
     logit = -(distancia - threshold) / temp
     confianza = 1 / (1 + np.exp(-logit))
     return confianza
@@ -165,7 +173,8 @@ def main():
         
         if reference_file is not None:
             reference_image = Image.open(reference_file).convert('RGB')
-            st.image(reference_image, caption="Firma de Referencia original", use_container_width=True)
+            st.image(reference_image, caption="Firma de Referencia original", use_column_width=True)
+            #st.image(reference_image, caption="Firma de Referencia original", use_container_width=True)
     
     with col2:
         st.subheader("📥 Firma a Verificar")
@@ -179,7 +188,7 @@ def main():
         
         if test_file is not None:
             test_image = Image.open(test_file).convert('RGB')
-            st.image(test_image, caption="Firma a Verificar", use_container_width=True)
+            st.image(test_image, caption="Firma a Verificar", use_column_width=True)
 
     
     # Realizar predicción si ambas imágenes están cargadas
