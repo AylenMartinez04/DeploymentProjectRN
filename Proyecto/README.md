@@ -36,5 +36,5 @@ Durante la ejecucion de los notebooks se agregaron notas a las celdas de train y
 ### Entregables:
 - Notebook en google colab con todos los detalles de nuestra red neuronal (en el mismo notebook se agrega una celda que conecta con los pesos del mejor modelo)
 - app.py desarrollada en Streamlit (las instrucciones de ejecución se detallan en este mismo README)
-- Reporte.pdf reporte de nuestro proyecto final de la materia
-- modelo.pt modelo obtenido al entrenar todo desde nuestro notebook, este lo agregamos en el repositorio pued la app hace uso de este.
+- Reporte_Proyecto_Redes_Neuronales.pdf reporte de nuestro proyecto final de la materia
+- mejor_modelo_entrenado.pt modelo obtenido al entrenar todo desde nuestro notebook, este lo agregamos en el repositorio pued la app hace uso de este.
