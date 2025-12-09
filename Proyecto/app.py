@@ -6,9 +6,6 @@ import torchvision.models as models
 import torchvision.transforms as transforms
 from PIL import Image
 
-# load train model
-
-
 # Configuración de la página
 st.set_page_config(
     page_title="Identificador de firmas falsas",
